@@ -145,6 +145,7 @@ class BaseModel(torch.nn.Module):
 
     def get_edges(self, t):
         edge = torch.cuda.ByteTensor(t.size()).zero_()
+        edge = edge.bool()
         edge[:,:,:,:,1:] = edge[:,:,:,:,1:] | (t[:,:,:,:,1:] != t[:,:,:,:,:-1])
         edge[:,:,:,:,:-1] = edge[:,:,:,:,:-1] | (t[:,:,:,:,1:] != t[:,:,:,:,:-1])
         edge[:,:,:,1:,:] = edge[:,:,:,1:,:] | (t[:,:,:,1:,:] != t[:,:,:,:-1,:])

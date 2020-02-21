@@ -20,11 +20,11 @@ RUN pip install dominate requests opencv-python
 RUN git clone https://github.com/NVIDIA/pix2pixHD /pix2pixHD
 
 #vid2vid install
-RUN git clone https://github.com/NVIDIA/vid2vid /vid2vid
-WORKDIR /vid2vid
+#RUN git clone https://github.com/NVIDIA/vid2vid /vid2vid
+#WORKDIR /vid2vid
 #download flownet2 model dependencies
 #WARNING: we had an instance where these scripts needed to be re-run after the docker instance was launched
-RUN python scripts/download_flownet2.py
-RUN python scripts/download_models_flownet2.py
+#RUN python scripts/download_flownet2.py
+#RUN python scripts/download_models_flownet2.py
 
 
