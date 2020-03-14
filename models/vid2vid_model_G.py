@@ -107,7 +107,7 @@ class Vid2VidModelG(BaseModel):
         
         # real images for training
         if real_image is not None:
-            real_image = Variable(real_image.data.cuda())   
+            real_image = Variable(real_image.data.cuda())
 
         return input_map, real_image, pool_map
 
